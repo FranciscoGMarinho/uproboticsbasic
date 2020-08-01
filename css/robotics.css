@@ -1,0 +1,48 @@
+.back {
+    background-image: url("../images/back2.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+
+@font-face {
+    font-family: qbold;
+    src: url(../fonts/Quicksand_Bold.otf)
+}
+
+@font-face {
+    font-family: qlight;
+    src: url(../fonts/Quicksand_Light.otf)
+}
+
+@font-face {
+    font-family: qbook;
+    src: url(../fonts/Quicksand_Book.otf)
+}
+
+@font-face {
+    font-family: qdash;
+    src: url(../fonts/Quicksand_Dash.otf)
+}
+
+.font-qbold {
+    font-family: qbold;
+}
+
+.font-qlight {
+    font-family: qlight;
+}
+
+.font-qbook {
+    font-family: qbook;
+}
+
+.font-qdash {
+    font-family: qdash;
+}
+
+
+/* .tabs .indicator {
+    color: aqua;
+    background-color: blue !important;
+} */
