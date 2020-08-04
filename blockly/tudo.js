@@ -507,25 +507,7 @@ Blockly.JavaScript['var_right'] = function(block) {
     return code;
 };
 
-Blockly.Blocks['metodo_loop'] = {
-    init: function() {
-        this.appendStatementInput("NAME")
-            .setCheck(null)
-            .appendField("Fazer isso para sempre");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(290);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
-Blockly.JavaScript['metodo_loop'] = function(block) {
-    var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '<br>void loop(){<br>\n'+statements_name+'<br>}';
-    return code;
-};
 
 Blockly.Blocks['metodo_setup'] = {
     init: function() {
