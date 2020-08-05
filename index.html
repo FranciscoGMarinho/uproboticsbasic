@@ -62,6 +62,9 @@
 		</div>
 	</div>
 
+<!-- <button onclick="ejecutar('codigogerado')">Copiar</button>  <BR><BR> -->
+
+
     <div class="col s12" style="height: 500px">
         <div class="row">
             <div class="col s8" style="height: 500px">
@@ -69,7 +72,7 @@
                 </div>
             </div>
             <div class="col s4">
-                <div id="teste" style="font-family: 'Courier New', Courier, monospace; float:left; height: 500px; width: 100%; padding-left: 2%;background-color: #FFFFFF;
+                <div id="codigogerado" style="font-family: 'Courier New', Courier, monospace; float:left; height: 500px; width: 100%; padding-left: 2%;background-color: #FFFFFF;
     	         color: #ffffff; border-style: solid; border-color: #E5E7E9;" class="clearfix">
                 </div>
             </div>
@@ -116,9 +119,22 @@
      
  
     </xml>
+	
+	<!-- 
+	<script>
+	function ejecutar(idelemento){
+     var aux = document.createElement("input");
+	aux.setAttribute("value", document.getElementById(idelemento).innerHTML);
+	document.body.appendChild(aux);
+	aux.select();
+	document.execCommand("copy");
+	document.body.removeChild(aux);
+	}
+	</script>
+	-->
 
     <script>
-        var vrau = "nothing here";
+        var mostrar = "nada aqui";
         var workspace = Blockly.inject('blocklyDiv', {
             toolbox: document.getElementById('toolbox')
         });
@@ -127,8 +143,8 @@
             Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
             var code = new String(Blockly.JavaScript.workspaceToCode(workspace));
             if (code != "") {
-                vrau = code;
-                document.getElementById("teste").innerHTML = vrau;
+                mostrar = code;
+                document.getElementById("codigogerado").innerHTML = mostrar;
                 cleanThanUp()
             }
         }
@@ -142,9 +158,9 @@
         }
 
         function updateGraph() {
-            if (vrau != "nothing here") {
+            if (mostrar != "nada aqui") {
                 var viz = new Viz();
-                viz.renderSVGElement(vrau)
+                viz.renderSVGElement(mostrar)
                     .then(function(element) {
                         document.getElementById("im").appendChild(element);
                     })
@@ -160,14 +176,7 @@
         workspace.addChangeListener(update);
     </script>
 
-    <script>
-        $(document).ready(function() {
-            $('ul.tabs').tabs({
-                swipeable: true,
-                responsiveThreshold: 1920
-            });
-        });
-    </script>
+
 
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
